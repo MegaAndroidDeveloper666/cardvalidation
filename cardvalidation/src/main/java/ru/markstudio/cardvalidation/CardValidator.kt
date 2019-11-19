@@ -28,7 +28,7 @@ class CardValidator {
         }
 
         private fun lyhnValidate(cardNumber: String): Boolean {
-            val digitList = cardNumber.map { ch -> ch.toInt() }.toMutableList()
+            val digitList = cardNumber.map { ch -> Character.getNumericValue(ch) }.toMutableList()
             for (i in digitList.indices step 2) {
                 var value = digitList[i] * 2
                 if (value > 9) {
